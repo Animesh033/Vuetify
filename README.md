@@ -1,4 +1,4 @@
-# solum-vue2
+# Vue with vuetify and data tables and auth 
 
 ## Project setup
 ```
