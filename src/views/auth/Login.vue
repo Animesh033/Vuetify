@@ -1,29 +1,43 @@
 <template>
 	<v-container>
-		<v-form ref="form" v-model="valid" lazy-validation>
-			<v-text-field
-				v-model="email"
-				:rules="emailRules"
-				label="E-mail"
-				required
-			></v-text-field>
+		<v-row>
+			<v-col cols="6" md="6" offset-md="3">
+				<div
+					v-ripple="{ center: true }"
+					class="text-center elevation-2 pa-12 headline"
+				>
+					<v-form ref="form" v-model="valid" lazy-validation>
+						<v-text-field
+							v-model="email"
+							:rules="emailRules"
+							label="E-mail"
+							required
+						></v-text-field>
 
-			<v-text-field
-				v-model="password"
-				:counter="10"
-				:rules="passwordRules"
-				:type="'password'"
-				label="Pasword"
-				required
-			></v-text-field>
+						<v-text-field
+							v-model="password"
+							:counter="10"
+							:rules="passwordRules"
+							:type="'password'"
+							label="Pasword"
+							required
+						></v-text-field>
 
-			<v-btn :disabled="!valid" color="success" class="mr-4" @click="authLogin">
-				{{ submitButtonCaption }}
-			</v-btn>
-			<v-btn color="light" class="mr-4" @click="switchAuthMode">{{
-				switchModeButtonCaption
-			}}</v-btn>
-		</v-form>
+						<v-btn
+							:disabled="!valid"
+							color="success"
+							class="mr-4"
+							@click="authLogin"
+						>
+							{{ submitButtonCaption }}
+						</v-btn>
+						<v-btn color="light" class="mr-4" @click="switchAuthMode">{{
+							switchModeButtonCaption
+						}}</v-btn>
+					</v-form>
+				</div>
+			</v-col>
+		</v-row>
 	</v-container>
 </template>
 
